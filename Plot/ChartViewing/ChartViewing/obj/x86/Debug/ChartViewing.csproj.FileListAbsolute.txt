@@ -1,0 +1,11 @@
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\bin\Debug\ChartViewing.exe
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\bin\Debug\ChartViewing.pdb
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\ChartViewing.Form1.resources
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\ChartViewing.Properties.Resources.resources
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\ChartViewing.exe
+c:\users\secret\documents\visual studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Debug\ChartViewing.pdb
+E:\Thesis lab experiment Documents\Plot\ChartViewing\ChartViewing\obj\x86\Debug\ChartViewing.exe
+E:\Thesis lab experiment Documents\Plot\ChartViewing\ChartViewing\obj\x86\Debug\ChartViewing.pdb

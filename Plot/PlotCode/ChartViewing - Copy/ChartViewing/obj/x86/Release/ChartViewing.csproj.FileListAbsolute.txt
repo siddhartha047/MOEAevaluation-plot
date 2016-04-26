@@ -1,0 +1,18 @@
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\bin\Release\ChartViewing.exe
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\bin\Release\ChartViewing.pdb
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\ChartViewing.Form1.resources
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\ChartViewing.Properties.Resources.resources
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\ChartViewing.exe
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing\ChartViewing\obj\x86\Release\ChartViewing.pdb
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\ChartViewing.exe
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\ChartViewing.pdb
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\bin\Release\ChartViewing.exe
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\bin\Release\ChartViewing.pdb
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\ChartViewing.Form1.resources
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\ChartViewing.Properties.Resources.resources
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Release\GenerateResource.write.1.tlog

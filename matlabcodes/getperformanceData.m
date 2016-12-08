@@ -20,6 +20,6 @@ function data=getperformanceData(filename,type)
     [r,c]=size(a);    
     data=str2double(a(:,2:c));
     
-    
+    fclose(fid);
 end
 

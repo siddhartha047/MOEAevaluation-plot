@@ -1,0 +1,3 @@
+
+problem name = wfg2		
+

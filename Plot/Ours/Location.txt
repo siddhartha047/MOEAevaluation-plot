@@ -1,2 +1,2 @@
-E:\Thesis lab experiment Documents\sidCleanJmetal\jmetal\pf\RefMx300
-E:\Thesis lab experiment Documents\sidCleanJmetal\jmetal\abcGenerations\100\0.5
+D:\FDEA2016\Codes\abcgenerations\igdEvaluationDTLZ\perfectSDEfixing\0.1
+D:\FDEA2016\Codes\abcgenerations\igdEvaluationDTLZ\perfectFDEAfixing\2\0.1

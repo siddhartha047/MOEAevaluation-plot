@@ -2,7 +2,7 @@ function [ S ] = calculateHYPE( Ref, P1,i1 )
     [row,dim]=size(P1);    
     disp(dim);
 
-    if i1<4
+    if i1==3
         nadir=max(Ref);
         nadir=nadir+1.25;
         bounds=1.1*nadir;                    

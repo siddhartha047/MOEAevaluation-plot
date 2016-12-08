@@ -3,13 +3,18 @@ function s = wilcoxon_rank_sum_testDTLZ()
     %x1=[1 2 3 4 5]
     %x2=[10 ]
     
-    writedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\dtlz.txt';
-    writerank='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\dtlzrank.txt';
+    performancetype='Ss';
+    thebaseDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ';    
+    performancetype='IGD';
+    writedir=strcat(thebaseDir,'\',performancetype,'dtlztest.txt');
+    writerank=strcat(thebaseDir,'\',performancetype,'dtlzranktest.txt');
+    
     
     problem='dtlz'
+    
     problemNos=[1 2 3 4 7];
     dimensions=[2 3 5 7 10 12 15 20];
-    performancetype='Ss';
+    
     seed=20;
     
     algorithms=[{'gde3'},{'hype'},{'moead'},{'zhenan'},{'nsgaiii'},{'moeaxxx'}];
@@ -32,12 +37,12 @@ function s = wilcoxon_rank_sum_testDTLZ()
         
         for dimension=[2 3 5 7 10 12 15 20];
             
-            gde3=make_array_fix_length(getperformanceData(strcat('E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectgde3','\','gde3',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
-            hype=make_array_fix_length(getperformanceData(strcat('E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPEDTLZBoundSample','\','hype',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
-            moead=make_array_fix_length(getperformanceData(strcat('E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAD','\','moead',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
-            zhenan=make_array_fix_length(getperformanceData(strcat('E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectZhenan','\','zhenan',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
-            nsgaiii=make_array_fix_length(getperformanceData(strcat('E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII','\','nsgaiiiexp',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
-            moeaxxx=make_array_fix_length(getperformanceData(strcat('E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2','\','sid',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
+            gde3=make_array_fix_length(getperformanceData(strcat(thebaseDir,'\perfectgde3','\','gde3',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
+            hype=make_array_fix_length(getperformanceData(strcat(thebaseDir,'\perfectHYPEDTLZBoundSample','\','hype',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
+            moead=make_array_fix_length(getperformanceData(strcat(thebaseDir,'\perfectMOEAD','\','moead',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
+            zhenan=make_array_fix_length(getperformanceData(strcat(thebaseDir,'\perfectZhenan','\','zhenan',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
+            nsgaiii=make_array_fix_length(getperformanceData(strcat(thebaseDir,'\perfectDTLZNSGAIII','\','nsgaiiiexp',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
+            moeaxxx=make_array_fix_length(getperformanceData(strcat(thebaseDir,'\perfectMOEAminmax2','\','sid',problem,num2str(problemNo),num2str(dimension),'.txt'),performancetype),seed)
 
             data=[{gde3},{hype},{moead},{zhenan},{nsgaiii},{moeaxxx}];
 
@@ -80,7 +85,7 @@ function s = wilcoxon_rank_sum_testDTLZ()
     fclose(fid);
     fclose(fid1);
     
-    flcose('all');
+    fclose('all');
     
     s=0;
 end

@@ -1,2 +1,2 @@
-C:\Users\secret\Desktop\sidCleanJmetal\jmetal\pf\RefMx300
-C:\Users\secret\Desktop\sidCleanJmetal\jmetal\abcGenerations\InspectionFitness\
+D:\FDEA2016\Codes\abcgenerations\igdEvaluationDTLZ\perfectSDEfixing\0.1
+D:\FDEA2016\Codes\abcgenerations\igdEvaluationDTLZ\perfectFDEAfixing\2\0.1

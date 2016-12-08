@@ -1,13 +1,13 @@
 function f=attainmentSurfacePlotParallel()
 
-    pfDir='E:\Thesis lab experiment documents\pf\perfectWFG\';
-    genDir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2\0.5\';
-    nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectNSGAIII\0.5\';    
+    pfDir='D:\FDEA2016\Codes\pf\perfectWFG\';
+    genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\newFDEAwfg2504\2\0.5\';
+    nsgadir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectNSGAIII\0.5\';    
     %nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII\0.5\';    
-    hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPE\0.5\';
-    moeaddir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAD\0.5\';
-    gde3dir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectGDE3\0.5\';
-    zhenandir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectZhenan\0.5\';
+    hypedir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectHYPE\0.5\';
+    moeaddir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectMOEAD\0.5\';
+    gde3dir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectGDE3\0.5\';
+    zhenandir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectZhenan\0.5\';
     
     for i=4:4
         for j=15
@@ -52,12 +52,12 @@ function s=subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,
     gde3data=getNonDominatedSolution(gde3data);
     
     %parallelcoords(pfData,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
-    %parallelcoords(ourData,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
+    parallelcoords(ourData,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
     %parallelcoords(zhenanData,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
     %parallelcoords(nsgadata,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
     %parallelcoords(moeaddata,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
     %parallelcoords(gde3data,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
-    parallelcoords(hypedata,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
+    %parallelcoords(hypedata,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);
     
     
     xlabel('Objective No');

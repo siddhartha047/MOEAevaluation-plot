@@ -6,9 +6,9 @@ seedNo= [0.1,0.3,0.5,0.7,0.9];
 problem_name=['wfg1';'wfg2';'wfg3';'wfg4';'wfg5';'wfg6';'wfg7';'wfg8';'wfg9']; %p1
 dimension=[2 3 5 7 10 12 15 20];%p2%
 algo_name=['sid'];%i3
-RefDir = 'E:\Thesis lab experiment Documents\pf\perfectWFG\';
+RefDir = 'D:\FDEA2016\Codes\pf\perfectWFG\';
 
-genDirectory='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\Analysis\parameterSensitivity\15\7g\';
+genDirectory='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\Analysis\parameterSensitivity\15\2g\';
 basic=genDirectory;
 
 for onAvg=[2 3 4 5 6 7 8 9 10]
@@ -16,7 +16,7 @@ for onAvg=[2 3 4 5 6 7 8 9 10]
     
     genDirectory=strcat(basic,num2str(onAvg),'\');
     
-for i1=8:9
+for i1=6:9
     for i2= 7:7
         
         %===================Dimension name=========================================
@@ -49,19 +49,20 @@ for i1=8:9
                 P1=readReferenceFile(a);
                 disp(size(P1));
                 
-                %IGD(r)=calculateIGD(Ref,P1);
-                IGD(r)=0;
+                IGD(r)=calculateIGD(Ref,P1);
+                %IGD(r)=0;
                 disp(IGD(r));
 
-                %GD(r)=calculateGD(Ref,P1);
-                GD(r)=0;
+                GD(r)=calculateGD(Ref,P1);
+               % GD(r)=0;
                 disp(GD(r));
 
                 S(r)=calculateHYPE(Ref,P1,i1);
                 %S(r)=0;
                 disp(S(r));
                 
-                SU(r)=0;
+                SU(r)=calculateSU(P1,dim);
+                %SU(r)=0;
                 disp(SU(r));
                 
                 NP(r)=0;

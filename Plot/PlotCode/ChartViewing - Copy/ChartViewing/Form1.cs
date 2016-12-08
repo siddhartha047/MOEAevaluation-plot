@@ -41,7 +41,7 @@ namespace ChartViewing
             InitializeParetoFrontLocation();
             InitializeSolutionLocation();
             InitializeChart();
-            trackBar1.Maximum = 300;
+            trackBar1.Maximum = 1500;
             trackBar1.Minimum = 1;
         }
 
@@ -130,7 +130,7 @@ namespace ChartViewing
                 //reader = new StreamReader(File.OpenRead(@"abcGenerations\generation"+generationNo));
                 if (truckValue)
                 {
-                    fileName = FunPath+@"\generation" + trackBar1.Value;
+                    fileName = FunPath+@"\fdeaDTLZ1_10.pf" + trackBar1.Value;
                 }
                 reader = new StreamReader(File.OpenRead(fileName));
             }

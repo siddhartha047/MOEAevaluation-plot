@@ -1,15 +1,12 @@
 function f=attainmentSurfacePlot()
     
     %pfDir='E:\Thesis lab experiment documents\pf\perfectWFG\';
-    pfDir='E:\Thesis lab experiment documents\pf\perfectDTLZ\';
-    genDir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2\0.5\';
+    pfDir='D:\FDEA2016\Codes\pf\perfectWFG\';
+    genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\FDEAdtlzgaussian\gaussian\2\0.1\';
    
     plotin=1;
-    
-    
-    
     %{
-    for i=2:2
+    for i=3:3
         
         wfg= strcat('wfg',num2str(i),'_3.pf');
         pfFile=strcat(pfDir,wfg);
@@ -24,20 +21,22 @@ function f=attainmentSurfacePlot()
     %}
     
    
-    for i=[7]
+    for i=[3]
         grid off;
-        dtlz= strcat('DTLZ',num2str(i),'_3D.pf');
-       % dtlz='DTLZ7(3)-PF.txt';
+        dtlz= strcat('DTLZ',num2str(i),'_3.pf');
+       %dtlz='DTLZ7(3)-PF.txt';
         dtlzpf=strcat('DTLZ',num2str(i),'_3.pf');
         pfFile=strcat(pfDir,dtlz);
-        ourGenFile=strcat(genDir,'sid',dtlzpf);
+        ourGenFile=strcat(genDir,'fdea',dtlzpf);
         zhenanFile=strcat(genDir,'zhenan',dtlzpf);
+        
+        ourGenFile='D:\FDEA2016\Codes\abcgenerations\igdEvaluationDTLZ\perfectMOEAD\0.1\MOEADdtlz3_3.pf';
         
         %subplot(2,2,plotin);
         subplotData(pfFile,ourGenFile,zhenanFile);
         plotin=plotin+1;
     end
-    
+    axis([0 2.5 0 2.5 0 2.5]);
    %}
     
     f=0
@@ -49,7 +48,7 @@ function s=drawScatter(pfData,color,marker)
     pfX=pfData(1:row,1);
     pfY=pfData(1:row,2);
     pfZ=pfData(1:row,3);
-    s=scatter3(pfX,pfY,pfZ,color,marker,'MarkerEdgeColor',[0 0 0],'MarkerFaceColor',[.5 .5 .5]);
+    s=scatter3(pfX,pfY,pfZ,color,marker,'MarkerEdgeColor',[0 0 0],'MarkerFaceColor',[1 0 0]);
     
 end
 
@@ -117,7 +116,7 @@ function s=drawLine(pfData,color,alpha)
    % BoxStyle='back';
     grid off;
     %view(135,44);
-    view(63,38);
+    %view(63,38);
    % view(70,22);
    % axis manual;
     %}
@@ -125,10 +124,10 @@ function s=drawLine(pfData,color,alpha)
 end
 
 function s=subplotData(pfFile,ourGenFile,zhenanFile)
-    pfData=load(pfFile);   
+    %pfData=load(pfFile);   
     %extra=[0.5,0,0;0,.5,0;0,0,.5];
     %pfData=[extra;pfData];
-    pfData=pfData(1:5000,:);
+   % pfData=pfData(1:5000,:);
    % pfData=getNonDominatedSolution(pfData);
     
     ourData=load(ourGenFile);
@@ -137,11 +136,21 @@ function s=subplotData(pfFile,ourGenFile,zhenanFile)
    % zhenanData=load(zhenanFile);
    % zhenanData=getNonDominatedSolution(zhenanData);
     
-    drawLine(pfData,'r','*');
+    %drawLine(pfData,'r','*');
     %drawScatterPareto(pfData,'b','o');
     hold on;
     drawScatter(ourData,'b','o');    
     %drawScatterZhenan(zhenanData, 'g','o');    
+    
+    
+   
+    f = 'x^2+y^2+z^2-1'; 
+    %f = 'x+y+z-1'; 
+    s=ezimplot3(f,[0 1 0 1 0 1])
+    
+   
+    
+    
     xlabel('f1');
     ylabel('f2','Rotation',0);
     zlabel('f3','Rotation',0);

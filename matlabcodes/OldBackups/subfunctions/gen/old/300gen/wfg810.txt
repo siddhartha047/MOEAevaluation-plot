@@ -1,0 +1,6 @@
+
+problem name = wfg8		
+
+
+
+dimension =10		

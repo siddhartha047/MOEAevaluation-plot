@@ -1,28 +1,29 @@
 function f=attainmentSurfacePlotWithMedian()
 
   
-    %pfDir='E:\Thesis lab experiment documents\pf\perfectWFG\';
-    pfDir='E:\Thesis lab experiment documents\pf\perfectDTLZ\';
+    pfDir='D:\FDEA2016\Codes\pf\perfectWFG\';
+    %pfDir='D:\FDEA2016\Codes\pf\perfectDTLZ\';
     
     
-    i=7;
-    %type='wfg';
-    type='DTLZ';
+    i=9;
+    type='wfg';
+    %type='DTLZ';
     basedon='Ss';
     
     
-    genDir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2\';    
-    %nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectNSGAIII\';       
-    nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII\';       
-    %hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPE\';
-    hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPEDTLZBoundSample\';
-    moeaddir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAD\';
-    gde3dir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectGDE3\';
-    zhenandir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectZhenan\';
+    
+    genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\newFDEAwfg2504\2\';    
+    nsgadir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectNSGAIII\';       
+    %nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII\';       
+    hypedir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectHYPE\';
+    %hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPEDTLZBoundSample\';
+    moeaddir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectMOEAD\';
+    gde3dir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectGDE3\';
+    zhenandir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectZhenan\';
     
     genDir=getmedianresult(strcat(genDir,'\sid',type,num2str(1),'2.txt'),basedon)
-    %nsgadir=getmedianresult(strcat(nsgadir,'\nsgaiii',type,num2str(1),'2.txt'),basedon)
-    nsgadir=getmedianresult(strcat(nsgadir,'\nsgaiiiexp',type,num2str(1),'2.txt'),basedon)
+    nsgadir=getmedianresult(strcat(nsgadir,'\nsgaiii',type,num2str(1),'2.txt'),basedon)
+    %nsgadir=getmedianresult(strcat(nsgadir,'\nsgaiiiexp',type,num2str(1),'2.txt'),basedon)
     hypedir=getmedianresult(strcat(hypedir,'\hype',type,num2str(1),'2.txt'),basedon)
     moeaddir=getmedianresult(strcat(moeaddir,'\moead',type,num2str(1),'2.txt'),basedon)
     gde3dir=getmedianresult(strcat(gde3dir,'\gde3',type,num2str(1),'2.txt'),basedon)
@@ -30,9 +31,9 @@ function f=attainmentSurfacePlotWithMedian()
     
     
     wfg= strcat(type,num2str(i),'_2.pf')
-   % nsgaiiiwfg= wfg;
-    nsgaiiiwfg= strcat('exp',type,num2str(i),'(2).ini.pf')
-    pfFile=strcat(pfDir,type,num2str(i),'_2D.pf')
+    nsgaiiiwfg= wfg;
+    %nsgaiiiwfg= strcat('exp',type,num2str(i),'(2).ini.pf')
+    pfFile=strcat(pfDir,type,num2str(i),'_2.pf')
     ourGenFile=strcat(genDir,'sid',wfg)
     zhenanFile=strcat(zhenandir,'zhenan',wfg)
     nsgafile=strcat(nsgadir,'nsgaiii',nsgaiiiwfg)

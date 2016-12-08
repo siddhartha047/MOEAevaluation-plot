@@ -16,3 +16,12 @@ C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartV
 C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Debug\ChartViewing.Properties.Resources.resources
 C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\secret\Documents\Visual Studio 2010\Projects\ChartViewing - Copy\ChartViewing\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\ChartViewing.exe
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\ChartViewing.pdb
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\bin\Debug\ChartViewing.exe
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\bin\Debug\ChartViewing.pdb
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\ChartViewing.Form1.resources
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\ChartViewing.Properties.Resources.resources
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\FDEA2016\Codes\PerformanceAndPlot\Plot\PlotCode\ChartViewing - Copy\ChartViewing\obj\x86\Debug\GenerateResource.write.1.tlog

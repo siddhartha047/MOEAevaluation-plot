@@ -1,0 +1,6 @@
+
+problem name = wfg5		
+
+
+
+dimension =19		

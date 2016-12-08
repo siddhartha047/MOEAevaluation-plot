@@ -1,6 +1,6 @@
 function f=attainmentSurfaceTrial()
      
-    pfDir='E:\Thesis lab experiment documents\pf\perfectWFG\';
+    pfDir='D:\FDEA2016\Codes\pf\perfectWFG\';
     %pfDir='E:\Thesis lab experiment documents\pf\perfectDTLZ\';
     
     
@@ -10,22 +10,31 @@ function f=attainmentSurfaceTrial()
     basedon='Ss';
     
     
-    genDir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2';    
-    nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectNSGAIII';       
-    %nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII\';          
-    hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPEBoundSample';
-    %hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPE\';
-    moeaddir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAD';
-    gde3dir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectGDE3';
-    zhenandir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectZhenan';
+    %genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\newFDEAwfg2504\2';    
+    %genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\backups\10real\2';
+    genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\newFDEAwfg2504\2';
     
-    genDir=getmedianresult(strcat(genDir,'\sid',type,num2str(1),'3.txt'),basedon)
+    nsgadir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectNSGAIII';       
+    %nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII\';          
+    hypedir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectHYPEBoundSample';
+    %hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPE\';
+    moeaddir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectMOEAD';
+    gde3dir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectGDE3';
+    zhenandir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectZhenan';
+    sdedir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectSDEwfg';
+    piceagdir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectPICEAG';
+    
+   genDir=getmedianresult(strcat(genDir,'\sid',type,num2str(1),'3.txt'),basedon)
+    %genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\newFDEAwfg2504\2\0.15\';
+    %genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\backups\10real\2\0.05\';
     nsgadir=getmedianresult(strcat(nsgadir,'\nsgaiii',type,num2str(1),'3.txt'),basedon)
     %nsgadir=getmedianresult(strcat(nsgadir,'\nsgaiiiexp',type,num2str(1),'3.txt'),basedon)
     hypedir=getmedianresult(strcat(hypedir,'\hype',type,num2str(1),'3.txt'),basedon)    
     moeaddir=getmedianresult(strcat(moeaddir,'\moead',type,num2str(1),'3.txt'),basedon)
     gde3dir=getmedianresult(strcat(gde3dir,'\gde3',type,num2str(1),'3.txt'),basedon)
     zhenandir=getmedianresult(strcat(zhenandir,'\zhenan',type,num2str(1),'3.txt'),basedon)
+    sdedir=getmedianresult(strcat(sdedir,'\sde',type,num2str(1),'3.txt'),basedon)
+    piceagdir=getmedianresult(strcat(piceagdir,'\p',type,num2str(1),'3.txt'),basedon)
     
     
     wfg=strcat(type,num2str(i),'_3.pf')
@@ -38,10 +47,12 @@ function f=attainmentSurfaceTrial()
     hypefile=strcat(hypedir,'hype',wfg)
     moeadfile=strcat(moeaddir,'moead',wfg)
     gde3file=strcat(gde3dir,'gde3',wfg)
+    sdefile=strcat(sdedir,'sde',wfg)
+    pfile=strcat(piceagdir,'p',wfg)
 
     
     %subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,gde3file);
-    subplotData(pfFile,gde3file);
+    subplotData(pfFile,ourGenFile);
     
     
    
@@ -58,7 +69,7 @@ function s=subplotData(pfFile,ourGenFile)
    % pfData=getNonDominatedSolution(pfData);
     
     ourData=load(ourGenFile);
-    ourData=getNonDominatedSolution(ourData);
+   % ourData=getNonDominatedSolution(ourData);
     
     drawLine(pfData,'r','*');    
     hold on;
@@ -84,9 +95,9 @@ function s=subplotData(pfFile,ourGenFile)
     end
     
     
-    xlabel('f1');
-    ylabel('f2','Rotation',0);
-    zlabel('f3','Rotation',0);    
+    xlabel('f_1');
+    ylabel('f_2','Rotation',0);
+    zlabel('f_3','Rotation',0);    
     hold off;     
 end
 
@@ -100,7 +111,7 @@ function v=evaluate(data)
         v=v+data(1,i)^2;
     end
 
-    if v<0.025
+    if v<0.03
         v=0;
     end
 end

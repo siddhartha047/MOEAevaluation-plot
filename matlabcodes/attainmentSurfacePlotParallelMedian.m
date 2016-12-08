@@ -1,22 +1,24 @@
 function f=attainmentSurfacePlotParallelMedian()
 
-    pfDir='E:\Thesis lab experiment documents\pf\perfectWFG\';
+    pfDir='D:\FDEA2016\Codes\pf\perfectWFG\';
     
-    genDir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2';    
-    nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectNSGAIII';       
-    %nsgadir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII';       
-    hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPEBoundSample';
-    %hypedir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectHYPEDTLZBoundSample';
-    moeaddir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAD';
-    gde3dir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectGDE3';
-    zhenandir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectZhenan';
-        
+    genDir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\FDEA\FDEAwfggaussian\2';    
+    nsgadir='D:\FDEA2016\Codes\abcgenerations\perfectWFG-DTLZ\perfectNSGAIII';       
+    %nsgadir='D:\FDEA2016\Codes\abcgenerations\abcgenerations\perfectWFG-DTLZ\perfectDTLZNSGAIII';       
+    hypedir='D:\FDEA2016\Codes\abcgenerations\perfectWFG-DTLZ\perfectHYPEBoundSample';
+    %hypedir='D:\FDEA2016\Codes\abcgenerations\perfectWFG-DTLZ\perfectHYPEDTLZBoundSample';
+    moeaddir='D:\FDEA2016\Codes\abcgenerations\perfectWFG-DTLZ\perfectMOEAD';
+    gde3dir='D:\FDEA2016\Codes\abcgenerations\perfectWFG-DTLZ\perfectGDE3';
+    zhenandir='D:\FDEA2016\Codes\abcgenerations\perfectWFG-DTLZ\perfectZhenan';
+    piceagdir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectPICEAG';
+    sdedir='D:\FDEA2016\Codes\abcgenerations\recompileWFG-DTLZ\perfectSDEwfg';
+    
     type='wfg';
     basedon='Ss';
     
     
     
-    for i=4:4
+    for i=2:2
         for j=15
             
             
@@ -28,7 +30,9 @@ function f=attainmentSurfacePlotParallelMedian()
             moeaddir=getmedianresult(strcat(moeaddir,'\moead',type,num2str(1),obj,'.txt'),basedon)
             gde3dir=getmedianresult(strcat(gde3dir,'\gde3',type,num2str(1),obj,'.txt'),basedon)
             zhenandir=getmedianresult(strcat(zhenandir,'\zhenan',type,num2str(1),obj,'.txt'),basedon)
-                    %}
+            piceagdir=getmedianresult(strcat(piceagdir,'\p',type,num2str(1),obj,'.txt'),basedon)
+            sdedir=getmedianresult(strcat(sdedir,'\sde',type,num2str(1),obj,'.txt'),basedon)
+            %}
               %{
             pfDir='E:\Thesis lab experiment documents\pf\perfectWFG\';
             genDir='E:\Thesis lab experiment documents\abcgenerations\perfectWFG-DTLZ\perfectMOEAminmax2\0.5\';
@@ -48,8 +52,10 @@ function f=attainmentSurfacePlotParallelMedian()
             hypefile=strcat(hypedir,'hype',wfg);
             moeadfile=strcat(moeaddir,'moead',wfg);
             gde3file=strcat(gde3dir,'gde3',wfg);
+            piceagfile=strcat(piceagdir,'p',wfg);
+            sdefile=strcat(sdedir,'sde',wfg);
 
-            subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,gde3file);            
+            subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,gde3file,piceagfile,sdefile);            
             
         end
     end
@@ -57,7 +63,7 @@ function f=attainmentSurfacePlotParallelMedian()
     f=0;
 end
 
-function s=subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,gde3file);
+function s=subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,gde3file,piceagfile,sdefile);
     pfData=load(pfFile);
     pfData=pfData(1:500,:);
     
@@ -80,13 +86,21 @@ function s=subplotData(pfFile,ourGenFile,zhenanFile,nsgafile,hypefile,moeadfile,
     gde3data=load(gde3file);
     gde3data=getNonDominatedSolution(gde3data);
     
+    piceagdata=load(piceagfile);
+    piceagdata=getNonDominatedSolution(piceagdata);
+    
+    sdedata=load(sdefile);
+    sdedata=getNonDominatedSolution(sdedata);
+    
     %plotparallel(pfData);
     %plotparallel(ourData);
     %plotparallel(zhenanData);
     %plotparallel(nsgadata);
-    plotparallel(moeaddata);
+    %plotparallel(moeaddata);
     %plotparallel(gde3data);
     %plotparallel(hypedata);
+    %plotparallel(piceagdata);
+    %plotparallel(sde);
     
     
     
@@ -110,7 +124,7 @@ function plot=plotparallel(ourData)
 
    
 
-    r=0.0125;
+    r=0.025;
     setGlobalx(r);
     
 
@@ -122,19 +136,19 @@ function plot=plotparallel(ourData)
     parallelcoords(sep1,'Color',[1, 0, 0],'LineWidth',1);
     xlabel('Objective No');
     ylabel('Objective Value');
-    title('Solutions with normalized distance threshold <= 0.0125');    
+    title('Solutions with normalized distance threshold <= 0.025');    
     
     subplot(3,1,2);
     parallelcoords(sep2,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);    
     xlabel('Objective No');
     ylabel('Objective Value');
-    title('Solutions with normalized distance threshold > 0.0125');
+    title('Solutions with normalized distance threshold > 0.025');
     
     subplot(3,1,3);
     parallelcoords(sep2,'Color',[0.1922,0.3255,0.6431],'LineWidth',1);    
     xlabel('Objective No');
     ylabel('Objective Value');
-    title('Zoomed Solutions with normalized distance threshold > 0.0125');
+    title('Zoomed Solutions with normalized distance threshold > 0.025');
     
     
     
